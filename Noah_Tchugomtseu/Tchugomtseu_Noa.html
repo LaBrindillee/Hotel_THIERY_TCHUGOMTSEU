@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tchugomtseu</title>
+
+    <script type="text/javascript" src="Hotel.js"></script>
+    <link rel="stylesheet" href="hotel.css">
+</head>
+
+<body onload="yearold()">
+    <header>
+        <h1> Booking Hotel</h1>
+        <p>Indiquez vos dates de réservation. Toute annulation doit se faire 48h avant</p>
+    </header>
+
+    <div id="wrapper">
+        <div id="formulaire">
+            <form>
+                <table class="info" id="tableau">
+                    <tr><td>   </td> <td> <h4>France - Étrange</h4> </td></tr>
+                    <tr>
+                        <td>Lieu de séjour</td>
+                        <td><select name="Lieu" id="lieu">
+                            <option value="Paris"> Paris </option>
+                            <option value="Bordeaux"> Bordeaux </option>
+                            <option value="Lyon"> Lyon </option>
+                            <option value="Saint-Tropèz"> Saint-Tropèz </option>
+                            <option value="Toulouse"> Toulouse </option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Départ <br> <input required type="date" name="Date de départ" size="30" id="dat-dep"></td>
+                        <td>Arrivée <br> <input required type="date" name="Date d'arrivée" size="30" id="dat-arr"></td>
+                    </tr>
+                    <tr>
+                        <td>Adulte</td>
+                        <td><input disabled required type="number" name="Adulte" min="0" max="20" id="adult"/></td>
+                        <td><input type="button" value="+" name="plus" id="plus" onclick="ajouter('adult')"></td>
+                        <td><input type="button" value="-" name="moins" id="moins" onclick="retirer('adult')"></td>
+                    </tr>
+                    <tr>
+                        <td>Enfant</td>
+                        <td><input disabled required type="number" name="Enfant" min="0" max="50" id="enfant"/></td>
+                        <td><input type="button" value="+" name="plus" id="plus" onclick="ajouter('enfant')"></td>
+                        <td><input type="button" value="-" name="moins" id="moins" onclick="retirer('enfant')"></td>
+                    </tr>
+                    <tr>
+                        <td>Chambre</td>
+                        <td><input disabled required type="number" name="Chambre" min="0" max="10" id="chambre"/></td>
+                        <td><input type="button" value="+" name="plus" id="plus" onclick="ajouter('chambre')"></td>
+                        <td><input type="button" value="-" name="moins" id="moins" onclick="retirer('chambre')"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="voyage_pro" value="professionnel"> Je voyage pour le travail
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="Recherche" onclick="recherche(event)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="reset" value="Effacer" ></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="resultat">
+            <h2>Confirmation réservation</h2>
+            <span id="resultat"></span>
+        </div>
+    </div>
+</body>
+
+</html>
